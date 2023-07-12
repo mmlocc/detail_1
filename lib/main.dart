@@ -109,7 +109,7 @@ class MyWidget extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                             child: Image.network(
                               imageUrls[index],
-                              fit: BoxFit.cover,
+                              fit: BoxFit.fill,
                               height: 210,
                               width: double.infinity,
                             ),
@@ -145,7 +145,7 @@ class MyWidget extends StatelessWidget {
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        "이 사람들이 더 궁금하다면?\n 송정음        정동교       김남인       허수빈",
+                        "이 사람들이 더 궁금하다면?\n송정음        정동교       김남인       허수빈",
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
