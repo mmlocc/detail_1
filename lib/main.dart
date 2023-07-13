@@ -272,7 +272,7 @@ class _MyWidget extends State<MyWidget> {
               margin: EdgeInsets.fromLTRB(15, 30, 0, 0),
               alignment: Alignment.centerLeft,
               child: Text(
-                "방명록",
+                "방명록 ",
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
