@@ -1,5 +1,8 @@
 # 팀, 개인소개 어플리케이션 입니다.
-- 팀 처음처럼
+- 팀 처음처럼 (메인 컬러: Colors.Orange, 보조 컬러: Color.fromARGB(255, 255, 201, 120))
+  
+ ![Colors orange](https://github.com/mmlocc/detail_1/assets/111124140/36e66312-dba6-4525-9551-eb25cd568c01)
+
 
 메인 페이지에는 팀에 대한 소개 및 클릭 시, 개인 페이지로 넘어갈 수 있는 동그란 미니 프로필을 만들어 두었고,
 
