@@ -68,7 +68,7 @@ class First extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      "이름",
+                      "김남인",
                       style: TextStyle(
                           shadows: [
                             Shadow(blurRadius: 10.0, offset: Offset(4.0, 4.0))
@@ -93,7 +93,7 @@ class First extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      "하고싶은 말",
+                      "5조 김남인 입니다!",
                       style: TextStyle(
                           shadows: [
                             Shadow(blurRadius: 10.0, offset: Offset(4.0, 4.0))
@@ -170,7 +170,7 @@ class First extends StatelessWidget {
                                       padding: const EdgeInsets.fromLTRB(
                                           32, 40, 0, 0),
                                       child: Text(
-                                        "이름",
+                                        "김남인",
                                         style: TextStyle(
                                           fontSize: 24,
                                           fontWeight: FontWeight.bold,
@@ -181,7 +181,7 @@ class First extends StatelessWidget {
                                       padding: const EdgeInsets.fromLTRB(
                                           230, 40, 0, 0),
                                       child: Text(
-                                        "MBTI",
+                                        "INTJ",
                                         style: TextStyle(
                                           fontSize: 22,
                                           fontWeight: FontWeight.normal,
@@ -196,7 +196,7 @@ class First extends StatelessWidget {
                                 child: Column(
                                   children: [
                                     Text(
-                                      '"하고싶은 아무말이나 하세요."',
+                                      '미래로 세계로 야야야!',
                                       style: TextStyle(
                                           fontSize: 24,
                                           fontWeight: FontWeight.w500,
@@ -231,7 +231,7 @@ class First extends StatelessWidget {
                                       width: 20,
                                     ),
                                     Text(
-                                      "내용",
+                                      "충청북도 충주 토박이입니다! 🤗",
                                       style: TextStyle(fontSize: 20),
                                     ),
                                   ],
@@ -263,7 +263,7 @@ class First extends StatelessWidget {
                                       width: 20,
                                     ),
                                     Text(
-                                      "내용",
+                                      "음악듣기가 최애 취미에요! 💿",
                                       style: TextStyle(fontSize: 20),
                                     ),
                                   ],
@@ -295,7 +295,7 @@ class First extends StatelessWidget {
                                       width: 20,
                                     ),
                                     Text(
-                                      "내용",
+                                      "이야기를 잘 들어주고 \n끈기가 있습니다! 🙈",
                                       style: TextStyle(fontSize: 20),
                                     ),
                                   ],
@@ -327,7 +327,7 @@ class First extends StatelessWidget {
                                       width: 20,
                                     ),
                                     Text(
-                                      "내용",
+                                      "벌레를 보면 소리를 지릅니다,,😅",
                                       style: TextStyle(fontSize: 20),
                                     ),
                                   ],
@@ -336,10 +336,10 @@ class First extends StatelessWidget {
                               SizedBox(height: 60),
                               TextButton(
                                 onPressed: () {
-                                  launch('https://naver.com');
+                                  launch('https://mmlocc.tistory.com/');
                                 },
                                 child: Text(
-                                  "000의 블로그 보기",
+                                  "저의 블로그 보기",
                                   style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
