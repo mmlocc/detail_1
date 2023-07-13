@@ -59,13 +59,12 @@ class _MyWidget extends State<MyWidget> {
     String formatDate = DateFormat('yy-MM-dd HH:mm').format(now);
     return Scaffold(
       appBar: AppBar(
-        centerTitle: false,
         elevation: 0,
         backgroundColor: Colors.white,
         title: const Text(
           "처음처럼",
           style: TextStyle(
-            fontSize: 26,
+            fontSize: 24,
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
@@ -82,7 +81,7 @@ class _MyWidget extends State<MyWidget> {
                   color: Colors.grey,
                 ),
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 118,
+                  horizontal: 116,
                   vertical: 10,
                 ),
                 child: const Text(
@@ -102,14 +101,14 @@ class _MyWidget extends State<MyWidget> {
                 child: const Text(
                   "팀 소개",
                   style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 24,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 0),
             SizedBox(
               height: 320,
               child: ListView.builder(
@@ -180,14 +179,15 @@ class _MyWidget extends State<MyWidget> {
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        "이 사람들이 더 궁금하다면?\n 김김김        김김김       김김김       김김김",
+                        "이 사람들이 더 궁금하다면?",
                         style: TextStyle(
-                          fontSize: 22,
+                          fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                   ),
+                  SizedBox(height: 6),
                   Container(
                     width: MediaQuery.of(context).size.width * 1,
                     height: MediaQuery.of(context).size.height * 0.1,
@@ -266,16 +266,23 @@ class _MyWidget extends State<MyWidget> {
                       ],
                     ),
                   ),
+                  Text(
+                    "김남인        정동교       허수빈       송정음",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(15, 30, 0, 0),
+              margin: EdgeInsets.fromLTRB(15, 20, 0, 0),
               alignment: Alignment.centerLeft,
               child: Text(
                 "방명록 ",
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
