@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'next_page.dart';
+import 'first.dart';
 import 'second.dart';
 import 'third.dart';
 import 'package:intl/intl.dart';
@@ -207,7 +207,7 @@ class _MyWidget extends State<MyWidget> {
                           child: CircleAvatar(
                             radius: 40,
                             backgroundImage: NetworkImage(
-                              "https://postfiles.pstatic.net/MjAyMzA3MTJfMjEy/MDAxNjg5MTM2NzcwODU4._gnYhu6rRtB4f-uNA4yN6X-hQu1SlET7QbYKSanZh9sg.vcaU-U-hjd9rDnyZ37vmgkAjxraYdzIN6tgW88-Y9Dsg.JPEG.blamezz/%EC%9D%B4%EB%AF%B8%EC%A7%80.jpeg?type=w966",
+                              "https://postfiles.pstatic.net/MjAyMzA3MTJfMzAw/MDAxNjg5MTM2NzcwODQ3.sqjvIQtO-Za6Wt4liDXKEIyCJ71aeLAfcoaP3FqlSMQg.UCKoNaNlWs8ADfT26ImYwM6hZVCFumoAaNavTY9iCwkg.JPEG.blamezz/%EC%9D%B4%EB%AF%B8%EC%A7%80_(3).jpeg?type=w966",
                             ),
                             backgroundColor: Colors.transparent,
                           ),
@@ -241,7 +241,7 @@ class _MyWidget extends State<MyWidget> {
                           child: CircleAvatar(
                             radius: 40,
                             backgroundImage: NetworkImage(
-                              "https://postfiles.pstatic.net/MjAyMzA3MTJfMzAw/MDAxNjg5MTM2NzcwODQ3.sqjvIQtO-Za6Wt4liDXKEIyCJ71aeLAfcoaP3FqlSMQg.UCKoNaNlWs8ADfT26ImYwM6hZVCFumoAaNavTY9iCwkg.JPEG.blamezz/%EC%9D%B4%EB%AF%B8%EC%A7%80_(3).jpeg?type=w966",
+                              "https://postfiles.pstatic.net/MjAyMzA3MTJfMjI3/MDAxNjg5MTM2NzcwODQ4.8fH40YeNJJMmj2opPAruZnXi_mj9-jXkOmZLJnImBgAg.tYHWvyl9MmgdEd575iqE-FM37QOc9fgbi6lNpPG4Ii8g.JPEG.blamezz/%EC%9D%B4%EB%AF%B8%EC%A7%80_(2).jpeg?type=w966",
                             ),
                             backgroundColor: Colors.transparent,
                           ),
@@ -258,7 +258,7 @@ class _MyWidget extends State<MyWidget> {
                           child: CircleAvatar(
                             radius: 40,
                             backgroundImage: NetworkImage(
-                              "https://postfiles.pstatic.net/MjAyMzA3MTJfMjI3/MDAxNjg5MTM2NzcwODQ4.8fH40YeNJJMmj2opPAruZnXi_mj9-jXkOmZLJnImBgAg.tYHWvyl9MmgdEd575iqE-FM37QOc9fgbi6lNpPG4Ii8g.JPEG.blamezz/%EC%9D%B4%EB%AF%B8%EC%A7%80_(2).jpeg?type=w966",
+                              "https://postfiles.pstatic.net/MjAyMzA3MTJfMjEy/MDAxNjg5MTM2NzcwODU4._gnYhu6rRtB4f-uNA4yN6X-hQu1SlET7QbYKSanZh9sg.vcaU-U-hjd9rDnyZ37vmgkAjxraYdzIN6tgW88-Y9Dsg.JPEG.blamezz/%EC%9D%B4%EB%AF%B8%EC%A7%80.jpeg?type=w966",
                             ),
                             backgroundColor: Colors.transparent,
                           ),
