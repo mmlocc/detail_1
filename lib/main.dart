@@ -362,16 +362,47 @@ class _MyWidget extends State<MyWidget> {
                             child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              name,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 30,
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(12, 10, 0, 0),
+                              child: Text(
+                                name,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                ),
                               ),
                             ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 10, 12, 0),
+                              child: Text(
+                                time,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ),
+                          ],
+                        )),
+                        SizedBox(height: 8),
+                        Container(
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
+                            child: Text(
+                              content,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
                             IconButton(
                               icon: Icon(Icons.delete_outlined),
-                              color: Colors.red,
+                              color: Color.fromARGB(255, 179, 17, 6),
                               onPressed: () {
                                 setState(() {
                                   dataList.removeAt(index);
@@ -380,28 +411,6 @@ class _MyWidget extends State<MyWidget> {
                               },
                             ),
                           ],
-                        )),
-                        Container(
-                          child: Text(
-                            content,
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 25,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  time,
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                  ),
-                                ),
-                              ]),
                         ),
                       ],
                     ),
