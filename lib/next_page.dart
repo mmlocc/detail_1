@@ -104,6 +104,8 @@ class Next_Page extends StatelessWidget {
                       onPressed: () {},
                       icon: Icon(
                         Icons.keyboard_double_arrow_up,
+//하단 화살표 색상 변경
+                        color: Colors.amber,
                         size: 60,
                       ),
                     ),
