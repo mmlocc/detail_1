@@ -185,7 +185,7 @@ class MyWidget extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const Next_Page(),
+                                builder: (context) => const Second(),
                               ),
                             );
                           },
@@ -202,7 +202,7 @@ class MyWidget extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const Next_Page(),
+                                builder: (context) => const Third(),
                               ),
                             );
                           },
@@ -219,7 +219,7 @@ class MyWidget extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const Next_Page(),
+                                builder: (context) => const Fourth(),
                               ),
                             );
                           },
