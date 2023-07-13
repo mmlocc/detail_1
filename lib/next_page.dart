@@ -45,6 +45,8 @@ class Next_Page extends StatelessWidget {
                         },
                         icon: Icon(
                           Icons.home_filled,
+                          color: Colors.black,
+                          // 좌측 상단 아이콘 색상 설정
                         ),
                       ),
                     ],
