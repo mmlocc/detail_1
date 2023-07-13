@@ -20,7 +20,7 @@ class Next_Page extends StatelessWidget {
               bottom: 0,
               child: Image.network(
 // 이미지 교체 가능
-                "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAyMDdfMTcw%2FMDAxNjQ0MTg4ODE1NzU2.w5vxGSeWiKsNqIMwUiqgr1mnsr63X5OZkVdhx9PJ0yUg.ttDl65yv1OMHSqiQDNuOlD7ZbLj97bKZ_WBSpr1dpDUg.PNG.jxbjultd%2Fimage.png&type=sc960_832",
+                "https://postfiles.pstatic.net/MjAyMzA3MTJfMzAw/MDAxNjg5MTM2NzcwODQ3.sqjvIQtO-Za6Wt4liDXKEIyCJ71aeLAfcoaP3FqlSMQg.UCKoNaNlWs8ADfT26ImYwM6hZVCFumoAaNavTY9iCwkg.JPEG.blamezz/%EC%9D%B4%EB%AF%B8%EC%A7%80_(3).jpeg?type=w966",
                 fit: BoxFit.cover,
               ),
             ),
