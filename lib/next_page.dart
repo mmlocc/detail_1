@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:detail_1/next_page.dart';
+import 'main.dart';
 
-void main() {
-  runApp(NextPage());
-}
-
-class NextPage extends StatelessWidget {
-  const NextPage({Key? key}) : super(key: key);
+class Next_Page extends StatelessWidget {
+  const Next_Page({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +19,38 @@ class NextPage extends StatelessWidget {
               right: 0,
               bottom: 0,
               child: Image.network(
-                "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbrO5OY%2FbtsnhSk6px0%2FE7RspYyQ47acPHz8dAYbdK%2Fimg.png",
+// 이미지 교체 가능
+                "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAyMDdfMTcw%2FMDAxNjQ0MTg4ODE1NzU2.w5vxGSeWiKsNqIMwUiqgr1mnsr63X5OZkVdhx9PJ0yUg.ttDl65yv1OMHSqiQDNuOlD7ZbLj97bKZ_WBSpr1dpDUg.PNG.jxbjultd%2Fimage.png&type=sc960_832",
                 fit: BoxFit.cover,
               ),
             ),
 
-            // 이름
+//돌아가기
+            Positioned(
+              top: 20,
+              left: 20,
+              child: Container(
+                  width: MediaQuery.of(context).size.width * 1,
+                  height: MediaQuery.of(context).size.height * 0.1,
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const MyApp(),
+                            ),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.home_filled,
+                        ),
+                      ),
+                    ],
+                  )),
+            ),
+// 이름 구간
             Positioned(
               bottom: 150,
               left: 20,
@@ -38,6 +60,7 @@ class NextPage extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
+// 이름을 입력해주세요
                         "보노보노",
                         style: TextStyle(
                             fontSize: 45, fontWeight: FontWeight.bold),
@@ -45,8 +68,7 @@ class NextPage extends StatelessWidget {
                     ],
                   )),
             ),
-
-            // 소개
+// 소개 구간
             Positioned(
               bottom: 100,
               left: 20,
@@ -56,6 +78,7 @@ class NextPage extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
+// 소개글을 작성해주세요.
                       "소개글을 적어주세요",
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.w800),
@@ -64,8 +87,7 @@ class NextPage extends StatelessWidget {
                 ),
               ),
             ),
-
-            // bottom arrow icon
+// 아래 화살표 아이콘
             Positioned(
               bottom: 0,
               left: 0,
@@ -87,8 +109,7 @@ class NextPage extends StatelessWidget {
                 ),
               ),
             ),
-
-            // media button
+// 화살표 터치하면 상세글 올라오게 함
             Positioned(
               bottom: 0,
               child: Container(
@@ -115,18 +136,21 @@ class NextPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Text(
+//이름을 입력해주세요
                                   "이름",
                                   style: TextStyle(
                                       fontSize: 30,
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Text(
+// 좌우명? 각오 등을 입력해주세요
                                   "좌우명",
                                   style: TextStyle(
                                       fontSize: 32,
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Text(
+// 설명글을 입력해주세요
                                   "설명글",
                                   style: TextStyle(
                                       fontSize: 27,
@@ -139,6 +163,7 @@ class NextPage extends StatelessWidget {
                                       TextButton(
                                         onPressed: () {},
                                         child: Text(
+// 고향 입력칸
                                           "고향",
                                           style: TextStyle(
                                               fontSize: 20,
@@ -156,6 +181,7 @@ class NextPage extends StatelessWidget {
                                         width: 20,
                                       ),
                                       Text(
+// 고향 소개글 입력
                                         "고향에 대해 소개해주세요.",
                                         style: TextStyle(fontSize: 20),
                                       ),
@@ -169,6 +195,7 @@ class NextPage extends StatelessWidget {
                                       TextButton(
                                         onPressed: () {},
                                         child: Text(
+// 취미 입력
                                           "취미",
                                           style: TextStyle(
                                               fontSize: 20,
@@ -186,6 +213,7 @@ class NextPage extends StatelessWidget {
                                         width: 20,
                                       ),
                                       Text(
+// 취미 입력
                                         "제 취미를 소개합니다",
                                         style: TextStyle(fontSize: 20),
                                       ),
@@ -199,6 +227,7 @@ class NextPage extends StatelessWidget {
                                       TextButton(
                                         onPressed: () {},
                                         child: Text(
+// 장점 입력
                                           "장점",
                                           style: TextStyle(
                                               fontSize: 20,
@@ -216,6 +245,7 @@ class NextPage extends StatelessWidget {
                                         width: 20,
                                       ),
                                       Text(
+// 장점 설명 입력
                                         "제 장점은 ~ 입니다.",
                                         style: TextStyle(fontSize: 20),
                                       ),
@@ -229,6 +259,7 @@ class NextPage extends StatelessWidget {
                                       TextButton(
                                         onPressed: () {},
                                         child: Text(
+// 단점 입력
                                           "단점",
                                           style: TextStyle(
                                               fontSize: 20,
@@ -246,6 +277,7 @@ class NextPage extends StatelessWidget {
                                         width: 20,
                                       ),
                                       Text(
+// 단점 설명 입력
                                         "제 단점은 ~ 입니다.",
                                         style: TextStyle(fontSize: 20),
                                       ),
@@ -259,6 +291,7 @@ class NextPage extends StatelessWidget {
                                       TextButton(
                                         onPressed: () {},
                                         child: Text(
+// TMI
                                           "TMI",
                                           style: TextStyle(
                                               fontSize: 20,
@@ -278,14 +311,17 @@ class NextPage extends StatelessWidget {
                                       Column(
                                         children: [
                                           Text(
+// TMI 첫번째 입력
                                             "TMI는 ~ 입니다.",
                                             style: TextStyle(fontSize: 20),
                                           ),
                                           Text(
+// TMI 두번째 입력
                                             "TMI는 ~ 입니다.",
                                             style: TextStyle(fontSize: 20),
                                           ),
                                           Text(
+// TMI 세번째 입력
                                             "TMI는 ~ 입니다.",
                                             style: TextStyle(fontSize: 20),
                                           ),
