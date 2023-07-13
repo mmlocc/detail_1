@@ -345,7 +345,7 @@ class _MyWidget extends State<MyWidget> {
               ),
             ),
             SizedBox(
-              height: 650,
+              height: 640,
               child: ListView.builder(
                 itemCount: dataList.length,
                 itemBuilder: (context, index) {
