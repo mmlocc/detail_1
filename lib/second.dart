@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'main.dart';
 
-class Second extends StatelessWidget {
+class Second extends StatelessWidget {
 const Second({Key? key}) : super(key: key);
 
 @override
