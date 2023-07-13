@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'next_page.dart';
 import 'second.dart';
 import 'third.dart';
+import 'package:intl/intl.dart';
+import 'dart:math';
 import 'fourth.dart';
 
 void main() {
@@ -20,11 +22,41 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({Key? key}) : super(key: key);
+class MyWidget extends StatefulWidget {
+  @override
+  // ignore: library_private_types_in_public_api
+  _MyWidget createState() {
+    return _MyWidget();
+  }
+}
 
+class _MyWidget extends State<MyWidget> {
+  // const MyWidget({Key? key}) : super(key: key);
+  TextEditingController myController = TextEditingController();
+  List<Map<String, dynamic>> dataList = [
+    {
+      "name": "익명 1248",
+      "content": "안녕하세요@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+      "time": "23-07-11 15:22",
+    },
+    {
+      "name": "익명 8425",
+      "content": "안녕하세요2",
+      "time": "23-07-11 16:32",
+    },
+  ];
+  var now = new DateTime.now();
+  @override
+  void initState() {
+    super.initState();
+    // myController에 리스너 추가
+    myController.addListener(_printLatestValue);
+  }
+
+  void _printLatestValue() {}
   @override
   Widget build(BuildContext context) {
+    String formatDate = DateFormat('yy-MM-dd HH:mm').format(now);
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
@@ -235,6 +267,146 @@ class MyWidget extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(15, 30, 0, 0),
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "방명록 ",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(8, 10, 0, 10),
+              child: Row(
+                children: [
+                  Flexible(
+                    child: TextFormField(
+                      maxLength: 50,
+                      keyboardType: TextInputType.multiline,
+                      maxLines: null,
+
+                      onChanged: (value) => {}, // 텍스트 필드 변화 감지
+                      controller: myController, // 텍스트 필드 인식 시킨느곳
+                      decoration: InputDecoration(
+                        hintText: "당신의 생각을 남겨주세요",
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: const Color.fromARGB(255, 55, 49, 49)),
+                        ),
+                        suffixIcon: IconButton(
+                          icon: Icon(Icons.clear),
+                          color: Colors.red,
+                          onPressed: () {
+                            setState(() {
+                              myController.clear();
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    child: Container(
+                      height: 70,
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 4.0,
+                      ),
+                      child: Column(
+                        children: [
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              //메인 색상
+                              backgroundColor: Colors.orange,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                int number = Random().nextInt(10000);
+                                dataList.add(
+                                  {
+                                    "name": "익명 $number",
+                                    "content": myController.text,
+                                    "time": formatDate,
+                                  },
+                                );
+                                myController.clear();
+                              });
+                            },
+                            child: Text("done"),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 640,
+              child: ListView.builder(
+                itemCount: dataList.length,
+                itemBuilder: (context, index) {
+                  String name = dataList[index]['name'];
+                  String content = dataList[index]['content'];
+                  String time = dataList[index]['time'];
+                  return Card(
+                    child: Column(
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween, 정렬 기능 구현할때 쓸것
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                            child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              name,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 30,
+                              ),
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.delete_outlined),
+                              color: Colors.red,
+                              onPressed: () {
+                                setState(() {
+                                  dataList.removeAt(index);
+                                });
+                                // print(dataList[index]);
+                              },
+                            ),
+                          ],
+                        )),
+                        Container(
+                          child: Text(
+                            content,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 25,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text(
+                                  time,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ]),
+                        ),
+                      ],
+                    ),
+                  );
+                },
               ),
             ),
           ],
