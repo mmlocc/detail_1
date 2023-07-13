@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:detail_1/next_page.dart';
+import 'next_page.dart';
+import 'second.dart';
+import 'third.dart';
 
 void main() {
   runApp(const MyApp());
@@ -145,7 +147,7 @@ class MyWidget extends StatelessWidget {
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        "이 사람들이 더 궁금하다면?\n송정음        정동교       김남인       허수빈",
+                        "이 사람들이 더 궁금하다면?\n 김김김        김김김       김김김       김김김",
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -165,7 +167,7 @@ class MyWidget extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const NextPage(),
+                                builder: (context) => const Next_Page(),
                               ),
                             );
                           },
@@ -182,7 +184,7 @@ class MyWidget extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const NextPage(),
+                                builder: (context) => const Next_Page(),
                               ),
                             );
                           },
@@ -199,7 +201,7 @@ class MyWidget extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const NextPage(),
+                                builder: (context) => const Next_Page(),
                               ),
                             );
                           },
@@ -216,7 +218,7 @@ class MyWidget extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const NextPage(),
+                                builder: (context) => const Next_Page(),
                               ),
                             );
                           },
