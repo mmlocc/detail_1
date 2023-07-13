@@ -1,16 +1,12 @@
-# flutter_application_5
+# 팀, 개인소개 어플리케이션 입니다.
+- 팀 처음처럼
 
-A new Flutter project.
+메인 페이지에는 팀에 대한 소개 및 클릭 시, 개인 페이지로 넘어갈 수 있는 동그란 미니 프로필을 만들어 두었고,
 
-## Getting Started
+팀소개 카드는 좌우로 슬라이드가 가능하고, 아래에 댓글 창을 추가하였습니다.
 
-This project is a starting point for a Flutter application.
+개인페이지(1) 하단에 있는 화살표 클릭시 개인페이지(2)로 넘어가게됩니다.
 
-A few resources to get you started if this is your first Flutter project:
+개인페이지(2) 에서 개인페이지(1)로 돌아가려면 개인페이지(2)창을 위에서 아래로 슬라이드 하거나 바깥 배경을 클릭하면 돌아갑니다.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+개인페이지(1) 에서 좌측 상단에 있는 아이콘을 클릭하면 팀소개 페이지로 돌아갑니다.

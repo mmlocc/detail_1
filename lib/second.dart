@@ -44,6 +44,8 @@ class Second extends StatelessWidget {
                         },
                         icon: Icon(
                           Icons.home_filled,
+                          color: Colors.black,
+                          // 좌측 상단 아이콘 색상 설정
                         ),
                       ),
                     ],
@@ -102,6 +104,8 @@ class Second extends StatelessWidget {
                       onPressed: () {},
                       icon: Icon(
                         Icons.keyboard_double_arrow_up,
+//하단 화살표 색상 변경
+                        color: Colors.amber,
                         size: 60,
                       ),
                     ),

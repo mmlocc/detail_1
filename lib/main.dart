@@ -4,6 +4,7 @@ import 'second.dart';
 import 'third.dart';
 import 'package:intl/intl.dart';
 import 'dart:math';
+import 'fourth.dart';
 
 void main() {
   runApp(const MyApp());
@@ -216,7 +217,7 @@ class _MyWidget extends State<MyWidget> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const Next_Page(),
+                                builder: (context) => const Second(),
                               ),
                             );
                           },
@@ -233,7 +234,7 @@ class _MyWidget extends State<MyWidget> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const Next_Page(),
+                                builder: (context) => const Third(),
                               ),
                             );
                           },
@@ -250,7 +251,7 @@ class _MyWidget extends State<MyWidget> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const Next_Page(),
+                                builder: (context) => const Fourth(),
                               ),
                             );
                           },
