@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'main.dart';
 
-class Next_Page extends StatelessWidget {
-  const Next_Page({Key? key}) : super(key: key);
+class First extends StatelessWidget {
+  const First({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,81 +20,99 @@ class Next_Page extends StatelessWidget {
               right: 0,
               bottom: 0,
               child: Image.network(
-// 이미지 교체 가능
-                "https://postfiles.pstatic.net/MjAyMzA3MTJfMzAw/MDAxNjg5MTM2NzcwODQ3.sqjvIQtO-Za6Wt4liDXKEIyCJ71aeLAfcoaP3FqlSMQg.UCKoNaNlWs8ADfT26ImYwM6hZVCFumoAaNavTY9iCwkg.JPEG.blamezz/%EC%9D%B4%EB%AF%B8%EC%A7%80_(3).jpeg?type=w966",
+                "https://postfiles.pstatic.net/MjAyMzA3MTJfMjI3/MDAxNjg5MTU5Njg4MTg0.1LC1V8XDu1X98PRjgcqT8n8-EI7efYVs8_sTa1JHXa0g.nfrilh8KDFi4c3XFn5Ph-f-NAZZEastftTi7mbJnjnwg.JPEG.blamezz/IMG_6333.JPG?type=w966",
                 fit: BoxFit.cover,
               ),
             ),
 
 //돌아가기
+
             Positioned(
-              top: 20,
-              left: 20,
+              top: 40,
+              left: 12,
               child: Container(
-                  width: MediaQuery.of(context).size.width * 1,
-                  height: MediaQuery.of(context).size.height * 0.1,
-                  child: Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const MyApp(),
-                            ),
-                          );
-                        },
-                        icon: Icon(
-                          Icons.home_filled,
-                          color: Colors.black,
-                          // 좌측 상단 아이콘 색상 설정
-                        ),
+                width: MediaQuery.of(context).size.width * 1.0,
+                height: MediaQuery.of(context).size.height * 0.1,
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const MyApp(),
+                          ),
+                        );
+                      },
+                      icon: Icon(
+                        Icons.arrow_back_ios_new_rounded,
+                        size: 30,
+                        color: Colors.black,
+
+// 좌측 상단 아이콘 색상 설정
                       ),
-                    ],
-                  )),
+                    ),
+                  ],
+                ),
+              ),
             ),
-// 이름 구간
+
+// 이름
+
             Positioned(
-              bottom: 150,
-              left: 20,
+              bottom: 190,
+              left: 24,
               child: Container(
-                  width: MediaQuery.of(context).size.width * 1,
-                  height: MediaQuery.of(context).size.height * 0.1,
-                  child: Row(
-                    children: [
-                      Text(
-// 이름을 입력해주세요
-                        "보노보노",
-                        style: TextStyle(
-                            fontSize: 45, fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  )),
+                width: MediaQuery.of(context).size.width * 1,
+                height: MediaQuery.of(context).size.height * 0.1,
+                child: Row(
+                  children: [
+                    Text(
+                      "이름",
+                      style: TextStyle(
+                          shadows: [
+                            Shadow(blurRadius: 10.0, offset: Offset(4.0, 4.0))
+                          ],
+                          fontSize: 48,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  ],
+                ),
+              ),
             ),
-// 소개 구간
+
+// 소개
+
             Positioned(
-              bottom: 100,
-              left: 20,
+              bottom: 140,
+              left: 28,
               child: Container(
                 width: MediaQuery.of(context).size.width * 1,
                 height: MediaQuery.of(context).size.height * 0.09,
                 child: Row(
                   children: [
                     Text(
-// 소개글을 작성해주세요.
-                      "소개글을 적어주세요",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w800),
+                      "하고싶은 말",
+                      style: TextStyle(
+                          shadows: [
+                            Shadow(blurRadius: 10.0, offset: Offset(4.0, 4.0))
+                          ],
+                          fontSize: 32,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white),
                     ),
                   ],
                 ),
               ),
             ),
-// 아래 화살표 아이콘
+
+// bottom arrow icon
+
             Positioned(
-              bottom: 0,
+              bottom: 8,
               left: 0,
-              right: 0,
+              right: 35,
               child: Container(
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.15,
@@ -104,8 +123,11 @@ class Next_Page extends StatelessWidget {
                       onPressed: () {},
                       icon: Icon(
                         Icons.keyboard_double_arrow_up,
-//하단 화살표 색상 변경
-                        color: Colors.amber,
+
+                        color: Colors.black,
+
+// 하단 화살표 색상 변경
+
                         size: 60,
                       ),
                     ),
@@ -113,7 +135,9 @@ class Next_Page extends StatelessWidget {
                 ),
               ),
             ),
-// 화살표 터치하면 상세글 올라오게 함
+
+// media button
+
             Positioned(
               bottom: 0,
               child: Container(
@@ -123,218 +147,213 @@ class Next_Page extends StatelessWidget {
                   onTap: () {
                     showModalBottomSheet(
                       context: context,
-                      isScrollControlled:
-                          true, // showmodalbottomsheet를 높게 노출시켜줌
+                      isScrollControlled: true,
+                      shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.vertical(top: Radius.circular(50))),
                       builder: (BuildContext context) {
                         return Container(
                           height: 700,
                           decoration: const BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
-                              // 팝업 테두리 둥글게
-                              topLeft: Radius.circular(70),
-                              topRight: Radius.circular(70),
+                              topLeft: Radius.circular(80),
+                              topRight: Radius.circular(80),
                             ),
                           ),
                           child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Text(
-//이름을 입력해주세요
-                                  "이름",
+                            children: [
+                              Container(
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          32, 40, 0, 0),
+                                      child: Text(
+                                        "이름",
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          230, 40, 0, 0),
+                                      child: Text(
+                                        "MBTI",
+                                        style: TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 40),
+                              Container(
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      '"하고싶은 아무말이나 하세요."',
+                                      style: TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.black),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 40),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 20),
+                                child: Row(
+                                  children: [
+                                    TextButton(
+                                      onPressed: () {},
+                                      child: Text(
+                                        "고향",
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      style: TextButton.styleFrom(
+                                        shape: CircleBorder(),
+                                        padding: EdgeInsets.all(20),
+                                        backgroundColor:
+                                            Color.fromARGB(255, 255, 201, 120),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 20,
+                                    ),
+                                    Text(
+                                      "내용",
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20, 20, 0, 0),
+                                child: Row(
+                                  children: [
+                                    TextButton(
+                                      onPressed: () {},
+                                      child: Text(
+                                        "취미",
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      style: TextButton.styleFrom(
+                                        shape: CircleBorder(),
+                                        padding: EdgeInsets.all(20),
+                                        backgroundColor:
+                                            Color.fromARGB(255, 255, 201, 120),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 20,
+                                    ),
+                                    Text(
+                                      "내용",
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20, 20, 0, 0),
+                                child: Row(
+                                  children: [
+                                    TextButton(
+                                      onPressed: () {},
+                                      child: Text(
+                                        "장점",
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      style: TextButton.styleFrom(
+                                        shape: CircleBorder(),
+                                        padding: EdgeInsets.all(20),
+                                        backgroundColor:
+                                            Color.fromARGB(255, 255, 201, 120),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 20,
+                                    ),
+                                    Text(
+                                      "내용",
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20, 20, 0, 0),
+                                child: Row(
+                                  children: [
+                                    TextButton(
+                                      onPressed: () {},
+                                      child: Text(
+                                        "TMI",
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      style: TextButton.styleFrom(
+                                        shape: CircleBorder(),
+                                        padding: EdgeInsets.all(20),
+                                        backgroundColor:
+                                            Color.fromARGB(255, 255, 201, 120),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 20,
+                                    ),
+                                    Text(
+                                      "내용",
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 60),
+                              TextButton(
+                                onPressed: () {
+                                  launch('https://naver.com');
+                                },
+                                child: Text(
+                                  "000의 블로그 보기",
                                   style: TextStyle(
-                                      fontSize: 30,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-// 좌우명? 각오 등을 입력해주세요
-                                  "좌우명",
-                                  style: TextStyle(
-                                      fontSize: 32,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-// 설명글을 입력해주세요
-                                  "설명글",
-                                  style: TextStyle(
-                                      fontSize: 27,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 20),
-                                  child: Row(
-                                    children: [
-                                      TextButton(
-                                        onPressed: () {},
-                                        child: Text(
-// 고향 입력칸
-                                          "고향",
-                                          style: TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black),
-                                        ),
-                                        style: TextButton.styleFrom(
-                                            shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(300)),
-                                            padding: EdgeInsets.all(20),
-                                            backgroundColor: Colors.orange),
-                                      ),
-                                      SizedBox(
-                                        width: 20,
-                                      ),
-                                      Text(
-// 고향 소개글 입력
-                                        "고향에 대해 소개해주세요.",
-                                        style: TextStyle(fontSize: 20),
-                                      ),
-                                    ],
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 20),
-                                  child: Row(
-                                    children: [
-                                      TextButton(
-                                        onPressed: () {},
-                                        child: Text(
-// 취미 입력
-                                          "취미",
-                                          style: TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black),
-                                        ),
-                                        style: TextButton.styleFrom(
-                                            shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(300)),
-                                            padding: EdgeInsets.all(20),
-                                            backgroundColor: Colors.orange),
-                                      ),
-                                      SizedBox(
-                                        width: 20,
-                                      ),
-                                      Text(
-// 취미 입력
-                                        "제 취미를 소개합니다",
-                                        style: TextStyle(fontSize: 20),
-                                      ),
-                                    ],
-                                  ),
+                                style: TextButton.styleFrom(
+                                  shape: StadiumBorder(),
+                                  padding: EdgeInsets.fromLTRB(60, 12, 60, 12),
+                                  backgroundColor: Colors.orange,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 20),
-                                  child: Row(
-                                    children: [
-                                      TextButton(
-                                        onPressed: () {},
-                                        child: Text(
-// 장점 입력
-                                          "장점",
-                                          style: TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black),
-                                        ),
-                                        style: TextButton.styleFrom(
-                                            shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(300)),
-                                            padding: EdgeInsets.all(20),
-                                            backgroundColor: Colors.orange),
-                                      ),
-                                      SizedBox(
-                                        width: 20,
-                                      ),
-                                      Text(
-// 장점 설명 입력
-                                        "제 장점은 ~ 입니다.",
-                                        style: TextStyle(fontSize: 20),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 20),
-                                  child: Row(
-                                    children: [
-                                      TextButton(
-                                        onPressed: () {},
-                                        child: Text(
-// 단점 입력
-                                          "단점",
-                                          style: TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black),
-                                        ),
-                                        style: TextButton.styleFrom(
-                                            shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(300)),
-                                            padding: EdgeInsets.all(20),
-                                            backgroundColor: Colors.orange),
-                                      ),
-                                      SizedBox(
-                                        width: 20,
-                                      ),
-                                      Text(
-// 단점 설명 입력
-                                        "제 단점은 ~ 입니다.",
-                                        style: TextStyle(fontSize: 20),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 20),
-                                  child: Row(
-                                    children: [
-                                      TextButton(
-                                        onPressed: () {},
-                                        child: Text(
-// TMI
-                                          "TMI",
-                                          style: TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black),
-                                        ),
-                                        style: TextButton.styleFrom(
-                                            shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(300)),
-                                            padding: EdgeInsets.all(20),
-                                            backgroundColor: Colors.orange),
-                                      ),
-                                      SizedBox(
-                                        width: 20,
-                                      ),
-                                      Column(
-                                        children: [
-                                          Text(
-// TMI 첫번째 입력
-                                            "TMI는 ~ 입니다.",
-                                            style: TextStyle(fontSize: 20),
-                                          ),
-                                          Text(
-// TMI 두번째 입력
-                                            "TMI는 ~ 입니다.",
-                                            style: TextStyle(fontSize: 20),
-                                          ),
-                                          Text(
-// TMI 세번째 입력
-                                            "TMI는 ~ 입니다.",
-                                            style: TextStyle(fontSize: 20),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ]),
+                              ),
+                            ],
+                          ),
                         );
                       },
                     );
