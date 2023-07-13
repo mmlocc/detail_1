@@ -36,13 +36,33 @@ class _MyWidget extends State<MyWidget> {
   List<Map<String, dynamic>> dataList = [
     {
       "name": "익명 1248",
-      "content": "안녕하세요@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+      "content": "4주간 지치지 말고 모두 화이팅!!",
       "time": "23-07-11 15:22",
     },
     {
       "name": "익명 8425",
-      "content": "안녕하세요2",
+      "content": "방명록을 작성해 주세요",
       "time": "23-07-11 16:32",
+    },
+    {
+      "name": "익명 8155",
+      "content": "처음처럼 술 광고는 환영입니다.",
+      "time": "23-07-10 15:32",
+    },
+    {
+      "name": "익명 2325",
+      "content": "처음처럼 술 광고는 환영입니다.",
+      "time": "23-07-10 18:12",
+    },
+    {
+      "name": "익명 1253",
+      "content": "햄버거 최대 몇개 가능?",
+      "time": "23-07-11 12:32",
+    },
+    {
+      "name": "익명 7253",
+      "content": "오늘 밥은 치킨이닭!!!꼬꼮ㄲㄲ꼮ㄲㄲ",
+      "time": "23-07-11 12:32",
     },
   ];
   var now = new DateTime.now();
@@ -74,23 +94,23 @@ class _MyWidget extends State<MyWidget> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Container(
+                width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.grey,
+                  color: Colors.orange,
                 ),
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 116,
                   vertical: 10,
+                  horizontal: 20,
                 ),
-                child: const Text(
-                  "뭔가 멋있는 한 마디",
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                  ),
-                ),
+                child: const Text("오류가 나면 ON & OFF",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center),
               ),
             ),
             const SizedBox(height: 14),
